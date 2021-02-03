@@ -27,8 +27,7 @@ def xx_block(data, num_filter, stride, dim_match, name, bn_mom=0.9, workspace=25
         shortcut = data
     else:
         shortcut = mx.sym.Convolution(data=data, num_filter=num_filter, kernel=(1, 1), stride=stride, no_bias=True,
-                                      workspace=workspace, name=name + '_conv1sc')
-        shortcut = mx.sym.BatchNorm(data=shortcut, fix_gamma=False, momentum=bn_mom, eps=2e-5, name=name + '_sc')
+                                      workspace=workspace, name=name + '_sc')
     if memonger:
         shortcut._set_attr(mirror_stage='True')
 
@@ -58,8 +57,7 @@ def bl_block(data, num_filter, stride, expansion_ratio, dim_match, name, bn_mom=
         shortcut = data
     else:
         shortcut = mx.sym.Convolution(data=data, num_filter=num_filter, kernel=(1, 1), stride=stride, no_bias=True,
-                                      workspace=workspace, name=name + '_conv1sc')
-        shortcut = mx.sym.BatchNorm(data=shortcut, fix_gamma=False, momentum=bn_mom, eps=2e-5, name=name + '_sc')
+                                      workspace=workspace, name=name + '_sc')
     if memonger:
         shortcut._set_attr(mirror_stage='True')
     return act3 + shortcut
@@ -108,8 +106,7 @@ def dw_block(data, num_filter, stride, expansion_ratio, dim_match, name, bn_mom=
         shortcut = data
     else:
         shortcut = mx.sym.Convolution(data=data, num_filter=num_filter, kernel=(1, 1), stride=stride, no_bias=True,
-                                      workspace=workspace, name=name + '_conv1sc')
-        shortcut = mx.sym.BatchNorm(data=shortcut, fix_gamma=False, momentum=bn_mom, eps=2e-5, name=name + '_sc')
+                                      workspace=workspace, name=name + '_sc')
     if memonger:
         shortcut._set_attr(mirror_stage='True')
     return act3 + shortcut
@@ -121,8 +118,9 @@ def genet(units, num_stages, filter_list, num_classes, workspace=256, dtype='flo
     data = mx.sym.Variable(name='data')
     if dtype == 'float32':
         data = mx.sym.identity(data=data, name='id')
-    elif dtype == 'float16':
-        data = mx.sym.Cast(data=data, dtype='float16')
+    else:
+        if dtype == 'float16':
+            data = mx.sym.Cast(data=data, dtype=np.float16)
 
     conv_body = mx.sym.Convolution(data=data, num_filter=filter_list[0], kernel=(3, 3), stride=(1, 1), pad=(1, 1),
                                    no_bias=True, name="conv0", workspace=workspace)
@@ -142,7 +140,7 @@ def genet(units, num_stages, filter_list, num_classes, workspace=256, dtype='flo
         elif i == 2:
             body = bl_block(body, filter_list[i + 1], (2, 2), 0.25, False, 'stage%d_unit%d' % (i + 1, 1))
             for j in range(units[i] - 1):
-                body = bl_block(body, filter_list[i + 1], (1, 1), 0.25, True, 'stage%d_unit%d' % (i + 1, j+2))
+                body = bl_block(body, filter_list[i + 1], (1, 1), 0.25, True, 'stage%d_unit%d' % (i + 1, j + 2))
         elif i == 3:
             body = dw_block(body, filter_list[i + 1], (2, 2), 3, False,
                             'stage%d_unit%d' % (i + 1, 1))
@@ -151,36 +149,35 @@ def genet(units, num_stages, filter_list, num_classes, workspace=256, dtype='flo
                                 'stage%d_unit%d' % (i + 1, j + 2))
         elif i == 4:
             body = dw_block(body, filter_list[i + 1], (1, 1), 3, False,
-                                'stage%d_unit%d' % (i + 1, 1))
+                            'stage%d_unit%d' % (i + 1, 1))
             for j in range(units[i] - 1):
                 body = dw_block(body, filter_list[i + 1], (1, 1), 3, True,
                                 'stage%d_unit%d' % (i + 1, j + 2))
 
     if dtype == 'float16':
-        body = mx.sym.Cast(data=body, dtype='float32')  # for fp16
+        body = mx.sym.Cast(data=body, dtype=np.float32)  # for fp16
 
     body = mx.sym.Convolution(data=body, num_filter=filter_list[-1], kernel=(1, 1), stride=(1, 1), pad=(0, 0),
                               no_bias=True, name="conv%d" % (num_stages + 1), workspace=workspace)
 
-    body = mx.sym.Convolution(data=body, num_filter=int(num_classes / 4), kernel=(1, 1), stride=(1, 1), pad=(0, 0),
-                              no_bias=True, name="conv_final", workspace=workspace)
     body = mx.sym.BatchNorm(data=body, fix_gamma=False, eps=2e-5, momentum=0.9, name='bn1')
     fc1 = mx.sym.FullyConnected(data=body, num_hidden=num_classes, name='pre_fc1')
 
     return fc1
+    #
 
 
 def get_symbol(num_classes, layer_type, conv_workspace=256, dtype='float32'):
     num_stages = 5
     if layer_type == 'light':
         units = [1, 3, 7, 2, 1]
-        filter_list = [32, 64, 96, 128, 256, 1024, 2560]
+        filter_list = [13, 48, 48, 384, 560, 256, 1920]
     elif layer_type == 'normal':
         units = [1, 2, 6, 4, 1]
         filter_list = [32, 128, 192, 640, 640, 640, 2560]
     elif layer_type == 'large':
-        units = [1, 3, 6, 5, 1]
-        filter_list = [64, 128, 256, 256, 384, 960, 1280]
+        units = [1, 3, 7, 5, 4]
+        filter_list = [32, 128, 192, 640, 640, 640, 2560]
     else:
         raise ValueError("no experiments done on num_layers {}, you can do it yourself".format(num_layers))
 
@@ -195,6 +192,6 @@ def get_symbol(num_classes, layer_type, conv_workspace=256, dtype='float32'):
 if __name__ == '__main__':
     data = mx.sym.Variable("data")
     symbol = get_symbol(1000, 'large')
-    image_shape = (4, 3, 224, 224)
-    mx.viz.print_summary(symbol, shape={"data": image_shape})
-    mx.viz.plot_network(symbol, save_format='pdf', hide_weights=True, shape={"data": image_shape}).view()
+    image_shape = (1, 3, 224, 224)
+    mx.viz.print_summary(symbol, shape={"data":image_shape})
+    mx.viz.plot_network(symbol, save_format='pdf', hide_weights=True, shape={"data":image_shape}).view()

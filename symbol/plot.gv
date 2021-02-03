@@ -1,0 +1,544 @@
+digraph plot {
+	data [label=data fillcolor="#8dd3c7" fixedsize=true height=0.8034 shape=oval style=filled width=1.3]
+	id [label=id fillcolor="#fccde5" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	conv0 [label="Convolution
+3x3/1x1, 32" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	conv0_bn1 [label=conv0_bn1 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	conv0_relu1 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage1_unit1_conv1 [label="Convolution
+3x3/1x1, 128" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage1_unit1_bn1 [label=stage1_unit1_bn1 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage1_unit1_relu1 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage1_unit1_conv2 [label="Convolution
+3x3/1x1, 128" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage1_unit1_bn2 [label=stage1_unit1_bn2 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage1_unit1_relu2 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage1_unit1_sc [label="Convolution
+1x1/1x1, 128" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	_plus0 [label=_plus0 fillcolor="#fccde5" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage2_unit1_conv1 [label="Convolution
+3x3/2x2, 192" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage2_unit1_bn1 [label=stage2_unit1_bn1 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage2_unit1_relu1 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage2_unit1_conv2 [label="Convolution
+3x3/1x1, 192" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage2_unit1_bn2 [label=stage2_unit1_bn2 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage2_unit1_relu2 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage2_unit1_sc [label="Convolution
+1x1/2x2, 192" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	_plus1 [label=_plus1 fillcolor="#fccde5" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage2_unit2_conv1 [label="Convolution
+3x3/1x1, 192" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage2_unit2_bn1 [label=stage2_unit2_bn1 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage2_unit2_relu1 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage2_unit2_conv2 [label="Convolution
+3x3/1x1, 192" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage2_unit2_bn2 [label=stage2_unit2_bn2 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage2_unit2_relu2 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	_plus2 [label=_plus2 fillcolor="#fccde5" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage2_unit3_conv1 [label="Convolution
+3x3/1x1, 192" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage2_unit3_bn1 [label=stage2_unit3_bn1 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage2_unit3_relu1 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage2_unit3_conv2 [label="Convolution
+3x3/1x1, 192" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage2_unit3_bn2 [label=stage2_unit3_bn2 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage2_unit3_relu2 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	_plus3 [label=_plus3 fillcolor="#fccde5" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit1_conv1 [label="Convolution
+1x1/1x1, 160" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit1_bn1 [label=stage3_unit1_bn1 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit1_relu1 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit1_conv2 [label="Convolution
+3x3/2x2, 160" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit1_bn2 [label=stage3_unit1_bn2 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit1_relu2 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit1_conv3 [label="Convolution
+1x1/1x1, 640" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit1_bn3 [label=stage3_unit1_bn3 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit1_relu3 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit1_sc [label="Convolution
+1x1/2x2, 640" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	_plus4 [label=_plus4 fillcolor="#fccde5" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit2_conv1 [label="Convolution
+1x1/1x1, 160" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit2_bn1 [label=stage3_unit2_bn1 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit2_relu1 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit2_conv2 [label="Convolution
+3x3/1x1, 160" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit2_bn2 [label=stage3_unit2_bn2 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit2_relu2 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit2_conv3 [label="Convolution
+1x1/1x1, 640" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit2_bn3 [label=stage3_unit2_bn3 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit2_relu3 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	_plus5 [label=_plus5 fillcolor="#fccde5" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit3_conv1 [label="Convolution
+1x1/1x1, 160" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit3_bn1 [label=stage3_unit3_bn1 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit3_relu1 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit3_conv2 [label="Convolution
+3x3/1x1, 160" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit3_bn2 [label=stage3_unit3_bn2 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit3_relu2 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit3_conv3 [label="Convolution
+1x1/1x1, 640" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit3_bn3 [label=stage3_unit3_bn3 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit3_relu3 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	_plus6 [label=_plus6 fillcolor="#fccde5" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit4_conv1 [label="Convolution
+1x1/1x1, 160" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit4_bn1 [label=stage3_unit4_bn1 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit4_relu1 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit4_conv2 [label="Convolution
+3x3/1x1, 160" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit4_bn2 [label=stage3_unit4_bn2 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit4_relu2 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit4_conv3 [label="Convolution
+1x1/1x1, 640" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit4_bn3 [label=stage3_unit4_bn3 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit4_relu3 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	_plus7 [label=_plus7 fillcolor="#fccde5" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit5_conv1 [label="Convolution
+1x1/1x1, 160" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit5_bn1 [label=stage3_unit5_bn1 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit5_relu1 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit5_conv2 [label="Convolution
+3x3/1x1, 160" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit5_bn2 [label=stage3_unit5_bn2 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit5_relu2 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit5_conv3 [label="Convolution
+1x1/1x1, 640" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit5_bn3 [label=stage3_unit5_bn3 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit5_relu3 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	_plus8 [label=_plus8 fillcolor="#fccde5" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit6_conv1 [label="Convolution
+1x1/1x1, 160" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit6_bn1 [label=stage3_unit6_bn1 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit6_relu1 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit6_conv2 [label="Convolution
+3x3/1x1, 160" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit6_bn2 [label=stage3_unit6_bn2 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit6_relu2 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit6_conv3 [label="Convolution
+1x1/1x1, 640" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit6_bn3 [label=stage3_unit6_bn3 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit6_relu3 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	_plus9 [label=_plus9 fillcolor="#fccde5" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit7_conv1 [label="Convolution
+1x1/1x1, 160" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit7_bn1 [label=stage3_unit7_bn1 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit7_relu1 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit7_conv2 [label="Convolution
+3x3/1x1, 160" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit7_bn2 [label=stage3_unit7_bn2 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit7_relu2 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit7_conv3 [label="Convolution
+1x1/1x1, 640" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit7_bn3 [label=stage3_unit7_bn3 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage3_unit7_relu3 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	_plus10 [label=_plus10 fillcolor="#fccde5" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit1_conv1 [label="Convolution
+1x1/1x1, 1920" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit1_bn1 [label=stage4_unit1_bn1 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit1_relu1 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit1_conv2_separableconv [label="Convolution
+3x3/2x2, 1920" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit1_bn2 [label=stage4_unit1_bn2 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit1_relu2 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit1_conv3 [label="Convolution
+1x1/1x1, 640" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit1_bn3 [label=stage4_unit1_bn3 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit1_relu3 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit1_sc [label="Convolution
+1x1/2x2, 640" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	_plus11 [label=_plus11 fillcolor="#fccde5" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit2_conv1 [label="Convolution
+1x1/1x1, 1920" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit2_bn1 [label=stage4_unit2_bn1 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit2_relu1 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit2_conv2_separableconv [label="Convolution
+3x3/1x1, 1920" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit2_bn2 [label=stage4_unit2_bn2 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit2_relu2 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit2_conv3 [label="Convolution
+1x1/1x1, 640" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit2_bn3 [label=stage4_unit2_bn3 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit2_relu3 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	_plus12 [label=_plus12 fillcolor="#fccde5" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit3_conv1 [label="Convolution
+1x1/1x1, 1920" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit3_bn1 [label=stage4_unit3_bn1 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit3_relu1 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit3_conv2_separableconv [label="Convolution
+3x3/1x1, 1920" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit3_bn2 [label=stage4_unit3_bn2 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit3_relu2 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit3_conv3 [label="Convolution
+1x1/1x1, 640" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit3_bn3 [label=stage4_unit3_bn3 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit3_relu3 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	_plus13 [label=_plus13 fillcolor="#fccde5" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit4_conv1 [label="Convolution
+1x1/1x1, 1920" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit4_bn1 [label=stage4_unit4_bn1 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit4_relu1 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit4_conv2_separableconv [label="Convolution
+3x3/1x1, 1920" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit4_bn2 [label=stage4_unit4_bn2 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit4_relu2 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit4_conv3 [label="Convolution
+1x1/1x1, 640" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit4_bn3 [label=stage4_unit4_bn3 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit4_relu3 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	_plus14 [label=_plus14 fillcolor="#fccde5" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit5_conv1 [label="Convolution
+1x1/1x1, 1920" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit5_bn1 [label=stage4_unit5_bn1 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit5_relu1 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit5_conv2_separableconv [label="Convolution
+3x3/1x1, 1920" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit5_bn2 [label=stage4_unit5_bn2 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit5_relu2 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit5_conv3 [label="Convolution
+1x1/1x1, 640" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit5_bn3 [label=stage4_unit5_bn3 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage4_unit5_relu3 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	_plus15 [label=_plus15 fillcolor="#fccde5" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit1_conv1 [label="Convolution
+1x1/1x1, 1920" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit1_bn1 [label=stage5_unit1_bn1 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit1_relu1 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit1_conv2_separableconv [label="Convolution
+3x3/2x2, 1920" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit1_bn2 [label=stage5_unit1_bn2 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit1_relu2 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit1_conv3 [label="Convolution
+1x1/1x1, 640" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit1_bn3 [label=stage5_unit1_bn3 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit1_relu3 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit1_sc [label="Convolution
+1x1/2x2, 640" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	_plus16 [label=_plus16 fillcolor="#fccde5" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit2_conv1 [label="Convolution
+1x1/1x1, 1920" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit2_bn1 [label=stage5_unit2_bn1 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit2_relu1 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit2_conv2_separableconv [label="Convolution
+3x3/1x1, 1920" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit2_bn2 [label=stage5_unit2_bn2 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit2_relu2 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit2_conv3 [label="Convolution
+1x1/1x1, 640" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit2_bn3 [label=stage5_unit2_bn3 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit2_relu3 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	_plus17 [label=_plus17 fillcolor="#fccde5" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit3_conv1 [label="Convolution
+1x1/1x1, 1920" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit3_bn1 [label=stage5_unit3_bn1 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit3_relu1 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit3_conv2_separableconv [label="Convolution
+3x3/1x1, 1920" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit3_bn2 [label=stage5_unit3_bn2 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit3_relu2 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit3_conv3 [label="Convolution
+1x1/1x1, 640" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit3_bn3 [label=stage5_unit3_bn3 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit3_relu3 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	_plus18 [label=_plus18 fillcolor="#fccde5" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit4_conv1 [label="Convolution
+1x1/1x1, 1920" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit4_bn1 [label=stage5_unit4_bn1 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit4_relu1 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit4_conv2_separableconv [label="Convolution
+3x3/1x1, 1920" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit4_bn2 [label=stage5_unit4_bn2 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit4_relu2 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit4_conv3 [label="Convolution
+1x1/1x1, 640" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit4_bn3 [label=stage5_unit4_bn3 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	stage5_unit4_relu3 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	_plus19 [label=_plus19 fillcolor="#fccde5" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	conv6 [label="Convolution
+1x1/1x1, 2560" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	bn1 [label=bn1 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	pre_fc1 [label="FullyConnected
+1000" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	id -> data [label="3x224x224" arrowtail=open dir=back]
+	conv0 -> id [label="3x224x224" arrowtail=open dir=back]
+	conv0_bn1 -> conv0 [label="32x224x224" arrowtail=open dir=back]
+	conv0_relu1 -> conv0_bn1 [label="32x224x224" arrowtail=open dir=back]
+	stage1_unit1_conv1 -> conv0_relu1 [label="32x224x224" arrowtail=open dir=back]
+	stage1_unit1_bn1 -> stage1_unit1_conv1 [label="128x224x224" arrowtail=open dir=back]
+	stage1_unit1_relu1 -> stage1_unit1_bn1 [label="128x224x224" arrowtail=open dir=back]
+	stage1_unit1_conv2 -> stage1_unit1_relu1 [label="128x224x224" arrowtail=open dir=back]
+	stage1_unit1_bn2 -> stage1_unit1_conv2 [label="128x224x224" arrowtail=open dir=back]
+	stage1_unit1_relu2 -> stage1_unit1_bn2 [label="128x224x224" arrowtail=open dir=back]
+	stage1_unit1_sc -> conv0_relu1 [label="32x224x224" arrowtail=open dir=back]
+	_plus0 -> stage1_unit1_relu2 [label="128x224x224" arrowtail=open dir=back]
+	_plus0 -> stage1_unit1_sc [label="128x224x224" arrowtail=open dir=back]
+	stage2_unit1_conv1 -> _plus0 [label="128x224x224" arrowtail=open dir=back]
+	stage2_unit1_bn1 -> stage2_unit1_conv1 [label="192x112x112" arrowtail=open dir=back]
+	stage2_unit1_relu1 -> stage2_unit1_bn1 [label="192x112x112" arrowtail=open dir=back]
+	stage2_unit1_conv2 -> stage2_unit1_relu1 [label="192x112x112" arrowtail=open dir=back]
+	stage2_unit1_bn2 -> stage2_unit1_conv2 [label="192x112x112" arrowtail=open dir=back]
+	stage2_unit1_relu2 -> stage2_unit1_bn2 [label="192x112x112" arrowtail=open dir=back]
+	stage2_unit1_sc -> _plus0 [label="128x224x224" arrowtail=open dir=back]
+	_plus1 -> stage2_unit1_relu2 [label="192x112x112" arrowtail=open dir=back]
+	_plus1 -> stage2_unit1_sc [label="192x112x112" arrowtail=open dir=back]
+	stage2_unit2_conv1 -> _plus1 [label="192x112x112" arrowtail=open dir=back]
+	stage2_unit2_bn1 -> stage2_unit2_conv1 [label="192x112x112" arrowtail=open dir=back]
+	stage2_unit2_relu1 -> stage2_unit2_bn1 [label="192x112x112" arrowtail=open dir=back]
+	stage2_unit2_conv2 -> stage2_unit2_relu1 [label="192x112x112" arrowtail=open dir=back]
+	stage2_unit2_bn2 -> stage2_unit2_conv2 [label="192x112x112" arrowtail=open dir=back]
+	stage2_unit2_relu2 -> stage2_unit2_bn2 [label="192x112x112" arrowtail=open dir=back]
+	_plus2 -> stage2_unit2_relu2 [label="192x112x112" arrowtail=open dir=back]
+	_plus2 -> _plus1 [label="192x112x112" arrowtail=open dir=back]
+	stage2_unit3_conv1 -> _plus2 [label="192x112x112" arrowtail=open dir=back]
+	stage2_unit3_bn1 -> stage2_unit3_conv1 [label="192x112x112" arrowtail=open dir=back]
+	stage2_unit3_relu1 -> stage2_unit3_bn1 [label="192x112x112" arrowtail=open dir=back]
+	stage2_unit3_conv2 -> stage2_unit3_relu1 [label="192x112x112" arrowtail=open dir=back]
+	stage2_unit3_bn2 -> stage2_unit3_conv2 [label="192x112x112" arrowtail=open dir=back]
+	stage2_unit3_relu2 -> stage2_unit3_bn2 [label="192x112x112" arrowtail=open dir=back]
+	_plus3 -> stage2_unit3_relu2 [label="192x112x112" arrowtail=open dir=back]
+	_plus3 -> _plus2 [label="192x112x112" arrowtail=open dir=back]
+	stage3_unit1_conv1 -> _plus3 [label="192x112x112" arrowtail=open dir=back]
+	stage3_unit1_bn1 -> stage3_unit1_conv1 [label="160x112x112" arrowtail=open dir=back]
+	stage3_unit1_relu1 -> stage3_unit1_bn1 [label="160x112x112" arrowtail=open dir=back]
+	stage3_unit1_conv2 -> stage3_unit1_relu1 [label="160x112x112" arrowtail=open dir=back]
+	stage3_unit1_bn2 -> stage3_unit1_conv2 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit1_relu2 -> stage3_unit1_bn2 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit1_conv3 -> stage3_unit1_relu2 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit1_bn3 -> stage3_unit1_conv3 [label="640x56x56" arrowtail=open dir=back]
+	stage3_unit1_relu3 -> stage3_unit1_bn3 [label="640x56x56" arrowtail=open dir=back]
+	stage3_unit1_sc -> _plus3 [label="192x112x112" arrowtail=open dir=back]
+	_plus4 -> stage3_unit1_relu3 [label="640x56x56" arrowtail=open dir=back]
+	_plus4 -> stage3_unit1_sc [label="640x56x56" arrowtail=open dir=back]
+	stage3_unit2_conv1 -> _plus4 [label="640x56x56" arrowtail=open dir=back]
+	stage3_unit2_bn1 -> stage3_unit2_conv1 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit2_relu1 -> stage3_unit2_bn1 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit2_conv2 -> stage3_unit2_relu1 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit2_bn2 -> stage3_unit2_conv2 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit2_relu2 -> stage3_unit2_bn2 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit2_conv3 -> stage3_unit2_relu2 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit2_bn3 -> stage3_unit2_conv3 [label="640x56x56" arrowtail=open dir=back]
+	stage3_unit2_relu3 -> stage3_unit2_bn3 [label="640x56x56" arrowtail=open dir=back]
+	_plus5 -> stage3_unit2_relu3 [label="640x56x56" arrowtail=open dir=back]
+	_plus5 -> _plus4 [label="640x56x56" arrowtail=open dir=back]
+	stage3_unit3_conv1 -> _plus5 [label="640x56x56" arrowtail=open dir=back]
+	stage3_unit3_bn1 -> stage3_unit3_conv1 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit3_relu1 -> stage3_unit3_bn1 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit3_conv2 -> stage3_unit3_relu1 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit3_bn2 -> stage3_unit3_conv2 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit3_relu2 -> stage3_unit3_bn2 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit3_conv3 -> stage3_unit3_relu2 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit3_bn3 -> stage3_unit3_conv3 [label="640x56x56" arrowtail=open dir=back]
+	stage3_unit3_relu3 -> stage3_unit3_bn3 [label="640x56x56" arrowtail=open dir=back]
+	_plus6 -> stage3_unit3_relu3 [label="640x56x56" arrowtail=open dir=back]
+	_plus6 -> _plus5 [label="640x56x56" arrowtail=open dir=back]
+	stage3_unit4_conv1 -> _plus6 [label="640x56x56" arrowtail=open dir=back]
+	stage3_unit4_bn1 -> stage3_unit4_conv1 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit4_relu1 -> stage3_unit4_bn1 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit4_conv2 -> stage3_unit4_relu1 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit4_bn2 -> stage3_unit4_conv2 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit4_relu2 -> stage3_unit4_bn2 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit4_conv3 -> stage3_unit4_relu2 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit4_bn3 -> stage3_unit4_conv3 [label="640x56x56" arrowtail=open dir=back]
+	stage3_unit4_relu3 -> stage3_unit4_bn3 [label="640x56x56" arrowtail=open dir=back]
+	_plus7 -> stage3_unit4_relu3 [label="640x56x56" arrowtail=open dir=back]
+	_plus7 -> _plus6 [label="640x56x56" arrowtail=open dir=back]
+	stage3_unit5_conv1 -> _plus7 [label="640x56x56" arrowtail=open dir=back]
+	stage3_unit5_bn1 -> stage3_unit5_conv1 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit5_relu1 -> stage3_unit5_bn1 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit5_conv2 -> stage3_unit5_relu1 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit5_bn2 -> stage3_unit5_conv2 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit5_relu2 -> stage3_unit5_bn2 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit5_conv3 -> stage3_unit5_relu2 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit5_bn3 -> stage3_unit5_conv3 [label="640x56x56" arrowtail=open dir=back]
+	stage3_unit5_relu3 -> stage3_unit5_bn3 [label="640x56x56" arrowtail=open dir=back]
+	_plus8 -> stage3_unit5_relu3 [label="640x56x56" arrowtail=open dir=back]
+	_plus8 -> _plus7 [label="640x56x56" arrowtail=open dir=back]
+	stage3_unit6_conv1 -> _plus8 [label="640x56x56" arrowtail=open dir=back]
+	stage3_unit6_bn1 -> stage3_unit6_conv1 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit6_relu1 -> stage3_unit6_bn1 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit6_conv2 -> stage3_unit6_relu1 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit6_bn2 -> stage3_unit6_conv2 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit6_relu2 -> stage3_unit6_bn2 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit6_conv3 -> stage3_unit6_relu2 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit6_bn3 -> stage3_unit6_conv3 [label="640x56x56" arrowtail=open dir=back]
+	stage3_unit6_relu3 -> stage3_unit6_bn3 [label="640x56x56" arrowtail=open dir=back]
+	_plus9 -> stage3_unit6_relu3 [label="640x56x56" arrowtail=open dir=back]
+	_plus9 -> _plus8 [label="640x56x56" arrowtail=open dir=back]
+	stage3_unit7_conv1 -> _plus9 [label="640x56x56" arrowtail=open dir=back]
+	stage3_unit7_bn1 -> stage3_unit7_conv1 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit7_relu1 -> stage3_unit7_bn1 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit7_conv2 -> stage3_unit7_relu1 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit7_bn2 -> stage3_unit7_conv2 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit7_relu2 -> stage3_unit7_bn2 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit7_conv3 -> stage3_unit7_relu2 [label="160x56x56" arrowtail=open dir=back]
+	stage3_unit7_bn3 -> stage3_unit7_conv3 [label="640x56x56" arrowtail=open dir=back]
+	stage3_unit7_relu3 -> stage3_unit7_bn3 [label="640x56x56" arrowtail=open dir=back]
+	_plus10 -> stage3_unit7_relu3 [label="640x56x56" arrowtail=open dir=back]
+	_plus10 -> _plus9 [label="640x56x56" arrowtail=open dir=back]
+	stage4_unit1_conv1 -> _plus10 [label="640x56x56" arrowtail=open dir=back]
+	stage4_unit1_bn1 -> stage4_unit1_conv1 [label="1920x56x56" arrowtail=open dir=back]
+	stage4_unit1_relu1 -> stage4_unit1_bn1 [label="1920x56x56" arrowtail=open dir=back]
+	stage4_unit1_conv2_separableconv -> stage4_unit1_relu1 [label="1920x56x56" arrowtail=open dir=back]
+	stage4_unit1_bn2 -> stage4_unit1_conv2_separableconv [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit1_relu2 -> stage4_unit1_bn2 [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit1_conv3 -> stage4_unit1_relu2 [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit1_bn3 -> stage4_unit1_conv3 [label="640x28x28" arrowtail=open dir=back]
+	stage4_unit1_relu3 -> stage4_unit1_bn3 [label="640x28x28" arrowtail=open dir=back]
+	stage4_unit1_sc -> _plus10 [label="640x56x56" arrowtail=open dir=back]
+	_plus11 -> stage4_unit1_relu3 [label="640x28x28" arrowtail=open dir=back]
+	_plus11 -> stage4_unit1_sc [label="640x28x28" arrowtail=open dir=back]
+	stage4_unit2_conv1 -> _plus11 [label="640x28x28" arrowtail=open dir=back]
+	stage4_unit2_bn1 -> stage4_unit2_conv1 [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit2_relu1 -> stage4_unit2_bn1 [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit2_conv2_separableconv -> stage4_unit2_relu1 [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit2_bn2 -> stage4_unit2_conv2_separableconv [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit2_relu2 -> stage4_unit2_bn2 [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit2_conv3 -> stage4_unit2_relu2 [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit2_bn3 -> stage4_unit2_conv3 [label="640x28x28" arrowtail=open dir=back]
+	stage4_unit2_relu3 -> stage4_unit2_bn3 [label="640x28x28" arrowtail=open dir=back]
+	_plus12 -> stage4_unit2_relu3 [label="640x28x28" arrowtail=open dir=back]
+	_plus12 -> _plus11 [label="640x28x28" arrowtail=open dir=back]
+	stage4_unit3_conv1 -> _plus12 [label="640x28x28" arrowtail=open dir=back]
+	stage4_unit3_bn1 -> stage4_unit3_conv1 [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit3_relu1 -> stage4_unit3_bn1 [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit3_conv2_separableconv -> stage4_unit3_relu1 [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit3_bn2 -> stage4_unit3_conv2_separableconv [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit3_relu2 -> stage4_unit3_bn2 [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit3_conv3 -> stage4_unit3_relu2 [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit3_bn3 -> stage4_unit3_conv3 [label="640x28x28" arrowtail=open dir=back]
+	stage4_unit3_relu3 -> stage4_unit3_bn3 [label="640x28x28" arrowtail=open dir=back]
+	_plus13 -> stage4_unit3_relu3 [label="640x28x28" arrowtail=open dir=back]
+	_plus13 -> _plus12 [label="640x28x28" arrowtail=open dir=back]
+	stage4_unit4_conv1 -> _plus13 [label="640x28x28" arrowtail=open dir=back]
+	stage4_unit4_bn1 -> stage4_unit4_conv1 [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit4_relu1 -> stage4_unit4_bn1 [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit4_conv2_separableconv -> stage4_unit4_relu1 [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit4_bn2 -> stage4_unit4_conv2_separableconv [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit4_relu2 -> stage4_unit4_bn2 [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit4_conv3 -> stage4_unit4_relu2 [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit4_bn3 -> stage4_unit4_conv3 [label="640x28x28" arrowtail=open dir=back]
+	stage4_unit4_relu3 -> stage4_unit4_bn3 [label="640x28x28" arrowtail=open dir=back]
+	_plus14 -> stage4_unit4_relu3 [label="640x28x28" arrowtail=open dir=back]
+	_plus14 -> _plus13 [label="640x28x28" arrowtail=open dir=back]
+	stage4_unit5_conv1 -> _plus14 [label="640x28x28" arrowtail=open dir=back]
+	stage4_unit5_bn1 -> stage4_unit5_conv1 [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit5_relu1 -> stage4_unit5_bn1 [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit5_conv2_separableconv -> stage4_unit5_relu1 [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit5_bn2 -> stage4_unit5_conv2_separableconv [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit5_relu2 -> stage4_unit5_bn2 [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit5_conv3 -> stage4_unit5_relu2 [label="1920x28x28" arrowtail=open dir=back]
+	stage4_unit5_bn3 -> stage4_unit5_conv3 [label="640x28x28" arrowtail=open dir=back]
+	stage4_unit5_relu3 -> stage4_unit5_bn3 [label="640x28x28" arrowtail=open dir=back]
+	_plus15 -> stage4_unit5_relu3 [label="640x28x28" arrowtail=open dir=back]
+	_plus15 -> _plus14 [label="640x28x28" arrowtail=open dir=back]
+	stage5_unit1_conv1 -> _plus15 [label="640x28x28" arrowtail=open dir=back]
+	stage5_unit1_bn1 -> stage5_unit1_conv1 [label="1920x28x28" arrowtail=open dir=back]
+	stage5_unit1_relu1 -> stage5_unit1_bn1 [label="1920x28x28" arrowtail=open dir=back]
+	stage5_unit1_conv2_separableconv -> stage5_unit1_relu1 [label="1920x28x28" arrowtail=open dir=back]
+	stage5_unit1_bn2 -> stage5_unit1_conv2_separableconv [label="1920x14x14" arrowtail=open dir=back]
+	stage5_unit1_relu2 -> stage5_unit1_bn2 [label="1920x14x14" arrowtail=open dir=back]
+	stage5_unit1_conv3 -> stage5_unit1_relu2 [label="1920x14x14" arrowtail=open dir=back]
+	stage5_unit1_bn3 -> stage5_unit1_conv3 [label="640x14x14" arrowtail=open dir=back]
+	stage5_unit1_relu3 -> stage5_unit1_bn3 [label="640x14x14" arrowtail=open dir=back]
+	stage5_unit1_sc -> _plus15 [label="640x28x28" arrowtail=open dir=back]
+	_plus16 -> stage5_unit1_relu3 [label="640x14x14" arrowtail=open dir=back]
+	_plus16 -> stage5_unit1_sc [label="640x14x14" arrowtail=open dir=back]
+	stage5_unit2_conv1 -> _plus16 [label="640x14x14" arrowtail=open dir=back]
+	stage5_unit2_bn1 -> stage5_unit2_conv1 [label="1920x14x14" arrowtail=open dir=back]
+	stage5_unit2_relu1 -> stage5_unit2_bn1 [label="1920x14x14" arrowtail=open dir=back]
+	stage5_unit2_conv2_separableconv -> stage5_unit2_relu1 [label="1920x14x14" arrowtail=open dir=back]
+	stage5_unit2_bn2 -> stage5_unit2_conv2_separableconv [label="1920x14x14" arrowtail=open dir=back]
+	stage5_unit2_relu2 -> stage5_unit2_bn2 [label="1920x14x14" arrowtail=open dir=back]
+	stage5_unit2_conv3 -> stage5_unit2_relu2 [label="1920x14x14" arrowtail=open dir=back]
+	stage5_unit2_bn3 -> stage5_unit2_conv3 [label="640x14x14" arrowtail=open dir=back]
+	stage5_unit2_relu3 -> stage5_unit2_bn3 [label="640x14x14" arrowtail=open dir=back]
+	_plus17 -> stage5_unit2_relu3 [label="640x14x14" arrowtail=open dir=back]
+	_plus17 -> _plus16 [label="640x14x14" arrowtail=open dir=back]
+	stage5_unit3_conv1 -> _plus17 [label="640x14x14" arrowtail=open dir=back]
+	stage5_unit3_bn1 -> stage5_unit3_conv1 [label="1920x14x14" arrowtail=open dir=back]
+	stage5_unit3_relu1 -> stage5_unit3_bn1 [label="1920x14x14" arrowtail=open dir=back]
+	stage5_unit3_conv2_separableconv -> stage5_unit3_relu1 [label="1920x14x14" arrowtail=open dir=back]
+	stage5_unit3_bn2 -> stage5_unit3_conv2_separableconv [label="1920x14x14" arrowtail=open dir=back]
+	stage5_unit3_relu2 -> stage5_unit3_bn2 [label="1920x14x14" arrowtail=open dir=back]
+	stage5_unit3_conv3 -> stage5_unit3_relu2 [label="1920x14x14" arrowtail=open dir=back]
+	stage5_unit3_bn3 -> stage5_unit3_conv3 [label="640x14x14" arrowtail=open dir=back]
+	stage5_unit3_relu3 -> stage5_unit3_bn3 [label="640x14x14" arrowtail=open dir=back]
+	_plus18 -> stage5_unit3_relu3 [label="640x14x14" arrowtail=open dir=back]
+	_plus18 -> _plus17 [label="640x14x14" arrowtail=open dir=back]
+	stage5_unit4_conv1 -> _plus18 [label="640x14x14" arrowtail=open dir=back]
+	stage5_unit4_bn1 -> stage5_unit4_conv1 [label="1920x14x14" arrowtail=open dir=back]
+	stage5_unit4_relu1 -> stage5_unit4_bn1 [label="1920x14x14" arrowtail=open dir=back]
+	stage5_unit4_conv2_separableconv -> stage5_unit4_relu1 [label="1920x14x14" arrowtail=open dir=back]
+	stage5_unit4_bn2 -> stage5_unit4_conv2_separableconv [label="1920x14x14" arrowtail=open dir=back]
+	stage5_unit4_relu2 -> stage5_unit4_bn2 [label="1920x14x14" arrowtail=open dir=back]
+	stage5_unit4_conv3 -> stage5_unit4_relu2 [label="1920x14x14" arrowtail=open dir=back]
+	stage5_unit4_bn3 -> stage5_unit4_conv3 [label="640x14x14" arrowtail=open dir=back]
+	stage5_unit4_relu3 -> stage5_unit4_bn3 [label="640x14x14" arrowtail=open dir=back]
+	_plus19 -> stage5_unit4_relu3 [label="640x14x14" arrowtail=open dir=back]
+	_plus19 -> _plus18 [label="640x14x14" arrowtail=open dir=back]
+	conv6 -> _plus19 [label="640x14x14" arrowtail=open dir=back]
+	bn1 -> conv6 [label="2560x14x14" arrowtail=open dir=back]
+	pre_fc1 -> bn1 [label="2560x14x14" arrowtail=open dir=back]
+}

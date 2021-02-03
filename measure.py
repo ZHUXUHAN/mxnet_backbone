@@ -9,9 +9,10 @@ from utils import calflops
 from utils import calparams
 from utils.mxnet_paser import mxnet_paser
 
-# symbol = fresnet.get_symbol(1000, 50)
-symbol = resnet.get_symbol(1000, 50, '3, 224, 224')
-# symbol = genet.get_symbol(1000, 'light')
+# symbol = fresnet.get_symbol(1000, 100)
+# symbol = resnet.get_symbol(1000, 50, '3, 224, 224')
+symbol = genet.get_symbol(1000, 'large')
+symbol.save("network_train.json")
 # symbol = mx.symbol.load('/home/face_backbone/backbone/model-symbol.json')
 image_shape = (1, 3, 224, 224)
 
